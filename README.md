@@ -32,7 +32,7 @@ The project employs a combination of statistical analysis, machine learning mode
 
 
 ## License
-This project is licensed under the MIT License 
+This project is licensed under the [MIT License](LICENSE)
 
 ## Acknowledgments
 Special thanks to Thevesh Theva's open data and Dr. Bobby Madamanchi's guidance.
