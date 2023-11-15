@@ -1,0 +1,6 @@
+si507/
+.env
+.vscode/
+.DS_Store
+*.pyc
+__pycache__/
