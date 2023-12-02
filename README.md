@@ -1,13 +1,48 @@
 # Malaysian Political Dynamics Predictor (MPDP)
+
 ## Overview
-The Malaysian Political Dynamics Predictor (MPDP) is a data-driven project designed to analyze and predict key aspects of the Malaysian political landscape. This project primarily focuses on forecasting party-switching behavior among politicians, identifying influential figures in such transitions, and projecting potential coalition formations. It leverages historical election data, political affiliations, and other relevant political events from the 2020–2022 Malaysian political crisis.
+The Malaysian Political Dynamics Predictor (MPDP) is a web-based application designed to predict the outcomes of Malaysian parliamentary seats based on demographic data and other relevant factors. It utilizes machine learning models, specifically a RandomForestClassifier, to analyze and predict election results, and GPT-4-Turbo to provide reasoning and relevant information on the various Malaysian constituencies. The application provides an interface for users to input key characteristics such as age, gender, party affiliation, ethnicity, and the specific parliamentary region (parlimen) to receive a prediction and reasoning for the election outcome. 
 
 ## Background
-The 2020–2022 Malaysian political crisis, marked by significant party shifts, coalition government collapses, and the rapid succession of prime ministers, presents a complex political landscape for analysis. The crisis peaked with a snap general election in 2022, leading to the formation of a new coalition government. Key events like the Sheraton Move, which saw the fall of the Pakatan Harapan government and the resignation of Prime Minister Mahathir Mohamad, epitomize the political volatility that this project aims to decipher.
+In the dynamic landscape of Malaysian politics, where demographics and party affiliations play a significant role, the MPDP serves as a tool to explore the interplay of these factors and their potential impact on election results. By examining data from past census records and considering the influence of various attributes, the MPDP aims to bring a data-driven approach to understanding political trends.
+
+## Goals
+1. To provide an accessible platform for political analysts, researchers, and the public to forecast election outcomes.
+2. To offer insights into the demographic and political variables that are indicative of electoral success in Malaysia.
+3. To foster a greater understanding of the Malaysian political climate through data visualization and interactive features such as the network graph of politicians and parties.
 
 ## Data Sources
-1. Wikipedia: Entries detailing Malaysian political parties and politicians, linked with election outcomes.
-2. Thevesh Theva's Github: Thevesh's data on Malaysian parliamentary election results
+1. Thevesh Theva's [Github](https://github.com/Thevesh/analysis-election-msia): Thevesh's data on Malaysian parliamentary election results
+
+## Features
+1. __Interactive Form__: Users can input demographic details and select a parliamentary region to generate predictions.
+2. __Machine Learning Integration__: Incorporates a trained RandomForestClassifier to make predictions based on user inputs.
+3. __GPT-4-Turbo Reasoning__: Utilizes a GPT model to provide a narrative explanation for the predicted outcomes, enhancing user understanding of the model's decision-making process.
+4. __Network Visualization__: An embedded iframe displays the network graph detailing the connections between politicians and parties within the application.
+
+## Usage
+
+To use the MPDP, follow these steps:
+
+1. Enter the candidate's age and ballot order in the provided input fields.
+2. Select the candidate's gender, party affiliation, and ethnicity from the dropdown menus.
+3. Choose the relevant parlimen code that corresponds to the candidate's region.
+4. Click the "Submit" button to receive the prediction and reasoning. (Might take a while for the page to reload for reasoning)
+
+You can also view the network graph to understand the relationships between politicians and parties located at the end of the page.
+
+## Setup and Installation
+
+### Clone
+`git clone git@github.com:jeonghin/MPDP.git`
+
+### Dependencies
+`pip install -r requirements.txt`
+
+### OpenAI Key
+
+Navigate to `analysis.py` and paste your OpenAI key in there.
+
 
 ## Data Description
 
@@ -28,25 +63,6 @@ This file provides detailed information about the candidates in a general electi
 - `result`: Indicates whether the candidate won or lost.
 - `result_desc`: A description of the election result for the candidate (e.g., elected, not elected).
 - `new_mp`: Indicates whether the candidate is a new Member of Parliament (MP) or not.
-
-### results_parlimen_ge15.csv
-
-This file provides information about the election results for the parliamentary constituencies.
-
-- `state`: The state in Malaysia where the election is being held.
-- `parlimen`: The parliamentary constituency within the state.
-- `undi_keluar_peti`: The number of ballots taken out from the ballot boxes.
-- `undi_dalam_peti`: The number of ballots found inside the ballot boxes.
-- `undi_tak_kembali`: The number of ballots not returned.
-- `undi_tolak`: The number of rejected ballots.
-- `majoriti`: The majority margin (i.e., the difference in votes between the winning candidate and the runner-up).
-- `peratus_keluar`: The percentage of voter turnout.
-- `undi_rosak`: The number of spoiled ballots.
-- `pengundi_jumlah`: The total number of registered voters in the constituency.
-- `pengundi_tidak_hadir`: The number of registered voters who did not vote.
-- `rosak_vs_keseluruhan`: The proportion of spoiled ballots compared to the total ballots.
-- `rosak_vs_majoriti`: The proportion of spoiled ballots compared to the majority margin.
-- `tidakhadir_vs_majoriti`: The proportion of non-voters compared to the majority margin.
 
 ### census_parlimen.csv
 
@@ -104,27 +120,6 @@ This file provides census information for the parliamentary constituencies.
 - `utilities_pipedwater_other`: The proportion of households with access to other sources of piped water.
 - `utilities_electricity_home`: The proportion of households with electricity at home.
 - `utilities_electricity_none`: The proportion of households without electricity.
-
-## Goals
-1. __Predicting Party-Switching Likelihood__: Determine the probability of Malaysian politicians switching political parties.
-2. __Identifying Key Influencers__: Recognize politicians who significantly influence others to change parties, such as Azmin Ali's role in the defection of MPs from PKR to BERSATU.
-3. __Forecasting Coalition Formations__: Analyze potential alliances between political parties, considering historical rivalries and recent collaborations.
-
-## Methodology
-The project employs a combination of statistical analysis, machine learning models, and network analysis to:
-
-- Analyze historical voting patterns and political affiliations.
-- Identify patterns in party-switching behavior.
-- Model the influence of key political figures.
-- Simulate potential future political alliances and coalition formations.
-
-## How to Use
-
-### Clone
-`git clone git@github.com:jeonghin/MPDP.git`
-
-### Dependencies
-`pip install -r requirements.txt`
 
 
 ## License
