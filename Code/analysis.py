@@ -20,12 +20,16 @@ import requests
 from openai import OpenAI
 import dash_bootstrap_components as dbc
 import pickle
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 ####################################################
 #                       GPT                        #
 ####################################################
-API_KEY = "Your Key here"
-client = OpenAI(api_key=API_KEY)
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 ####################################################
