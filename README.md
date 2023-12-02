@@ -41,7 +41,7 @@ You can also view the network graph to understand the relationships between poli
 
 ### OpenAI Key
 
-Navigate to the `Code` and create a `.env` file. Add your OpenAI key in there.
+Navigate to the `Code` folder and create a `.env` file. Add your OpenAI key in there.
 
 ### Dash
 
