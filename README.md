@@ -43,6 +43,11 @@ You can also view the network graph to understand the relationships between poli
 
 Navigate to the `Code` and create a `.env` file. Add your OpenAI key in there.
 
+### Dash
+
+To start the Dash server: 
+
+`python analysis.py`
 
 ## Data Description
 
