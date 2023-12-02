@@ -41,7 +41,7 @@ You can also view the network graph to understand the relationships between poli
 
 ### OpenAI Key
 
-Navigate to `analysis.py` and paste your OpenAI key in there.
+Navigate to the `Code` and create a `.env` file. Add your OpenAI key in there.
 
 
 ## Data Description
