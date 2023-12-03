@@ -127,6 +127,32 @@ This file provides census information for the parliamentary constituencies.
 - `utilities_electricity_none`: The proportion of households without electricity.
 
 
+## Additional Files
+
+### assets/network.html
+
+This html file will be embedded in the MPDP application to display the network graph.
+
+### analysis.ipynb
+
+This file evaluates the performance of the RandomForestClassifier used in the MPDP application. The ML model has a 70% accuracy.
+
+### network.ipynb
+
+This file converts the `candidates_ge15.csv` into nodes and links to be used in the network.html. The converted result is stored in `graph_data_new.json`
+
+### ML.py
+
+This file runs and save the RandomForestClassifier model in `ML.pkl`
+
+### graph_data_new.json
+
+Nodes and links between Malaysian politicians and their parties.
+
+### ML.pkl
+
+RandomForestClassifier used in the MPDP application
+
 ## License
 This project is licensed under the [MIT License](LICENSE)
 
